@@ -7,6 +7,7 @@
 ### Association
 - has_many :posts
 - has_many :groups
+- has_many  :users,  through:  :posts_tags
 
 ## postsテーブル
 |Column|Type|Options|
@@ -23,10 +24,6 @@
 |------|----|-------|
 |groupname|text|null: false|
 |chatname|text|null: false|
-|group_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
-### Association
-- belongs_to :user
 - has_many :posts
 - has_many :posts_users
 - has_many  :users,  through:  :posts_tags
