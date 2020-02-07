@@ -7,7 +7,7 @@
 ### Association
 - has_many :posts
 - has_many :groups
-- has_many  :users,  through:  :posts_tags
+- has_many  :posts_tags,  through:  :users
 
 ## postsテーブル
 |Column|Type|Options|
