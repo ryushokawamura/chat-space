@@ -7,7 +7,7 @@
 ### Association
 - has_many :posts
 - has_many :groups
-- has_many  :posts_tags,  through:  :users
+- has_many  :posts,  through:  :users
 
 ## postsテーブル
 |Column|Type|Options|
@@ -17,13 +17,12 @@
 |user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- has_many :groups
+- belongs_to :groups
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|groupname|text|null: false|
-|chatname|text|null: false|
+|name|string|null: false|
 - has_many :posts
 - has_many :posts_users
 - has_many  :users,  through:  :posts_tags
