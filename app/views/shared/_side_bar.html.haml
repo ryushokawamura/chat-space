@@ -1,0 +1,21 @@
+.chat-side
+  .side-header
+    .side-in
+      name
+      .sidein-name
+      .sidein-menu
+        .sidein-left
+          = link_to "#", class: "contents__btn" do
+            = icon('fas', 'edit')
+        .sidein-right
+          = link_to "#", class: "contents__btn" do
+            = icon('fas', 'cog')
+  .side-groups
+    = link_to "#", class: "contents__btn" do
+      .side-group
+        %p
+          test
+        %p
+          testname
+      .side-group1
+      -# .side-group2
