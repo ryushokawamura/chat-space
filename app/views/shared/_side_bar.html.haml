@@ -1,21 +1,20 @@
-.chat-side
-  .side-header
-    .side-in
+.chat__side
+  .side__header
+    .side__in
       name
-      .sidein-name
-      .sidein-menu
-        .sidein-left
+      .side__in__name
+      .side__in__menu
+        .side__in__menu__left
           = link_to "#", class: "contents__btn" do
             = icon('fas', 'edit')
-        .sidein-right
+        .side__in__menu__right
           = link_to "#", class: "contents__btn" do
             = icon('fas', 'cog')
-  .side-groups
+  .side__groups
     = link_to "#", class: "contents__btn" do
-      .side-group
+      .side__groups__group
         %p
           test
         %p
           testname
-      .side-group1
-      -# .side-group2
+      -# .side-group1

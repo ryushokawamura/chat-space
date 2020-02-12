@@ -1,21 +1,21 @@
 .main
-  .main-header
-    .main-header-left
-      .main-header-left-group
+  .main__header
+    .main__header__left
+      .main__header__left__group
         headerleft
-      .main-header-left-member
-        .main-headerleft-name
+      .main__header__left__member
+        .main__header__left__member__name
           name1:
-        .main-headerleft-massage
+        .main__header__left__massage
           massage1
-    .main-header-edit
-      = link_to "Edit", messages_index_path, class: "edit-link"
-  .main-center
+    .main__header__edit
+      = link_to "Edit", messages__index__path, class: "edit-link"
+  .main__center
   .form
-    %form.new-message
-      .input-box
-        %input.input-text{:placeholder => "type a message", :type => "text"}/
+    .form__new-message
+      .form__input-box
+        %input.input-text{:placeholder : "type a message", :type : "text"}/
         %label{class: "input-box__image"}
           = icon('fas', 'image')
           %input{type:"file", class: "input-box__image__file"}
-      %input.submit-btn{:name => "commit", :type => "submit", :value => "Send"}/
+      %input.submit-btn{:name : "commit", :type : "submit", :value => "Send"}/
