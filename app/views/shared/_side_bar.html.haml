@@ -1,20 +1,28 @@
 .chat__side
   .side__header
     = current_user.name
-  .side__header__in
-    name
-    .side__in__name
-      .side__in__menu
-        .side__in__menu__left
-          = link_to "#", class: "contents__btn" do
-            = icon('fas', 'edit')
-        .side__in__menu__right
-          = link_to edit_user_path(current_user), class: "contents__btn" do
-            = icon('fas', 'cog',class: 'icon')
+    .side__header__in
+      name
+      .side__header__in__name
+        = link_to new_group_path do
+          .side__header__in__menu
+            .side__header__in__menu__left
+              = link_to new_group_path, class: "contents__btn" do
+                = icon('fas', 'edit')
+            .side__header__in__menu__right
+              = link_to edit_user_path(current_user), class: "contents__btn" do
+                = icon('fas', 'cog',class: 'icon')
   .side__groups
-    = link_to "#", class: "contents__btn" do
-      .side__groups__group
-        %p
-          test
-        %p
-          testname
+    - current_user.groups.each do |group|
+      .group
+        = link_to '#' do
+          .group__name
+            = group.name
+          .group__message
+            メッセージはまだありません。
+    -# = link_to "#", class: "contents__btn" do
+    -#   .side__groups__group
+    -#     %p
+    -#       test
+    -#     %p
+    -#       testname
