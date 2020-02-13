@@ -6,16 +6,16 @@
       .main__header__left__member
         .main__header__left__member__name
           name1:
-        .main__header__left__massage
+        .main__header__left__member__massage
           massage1
     .main__header__edit
-      = link_to "Edit", messages__index__path, class: "edit-link"
+      -# = link_to "Edit", messages__index__path, class: "edit-link"
   .main__center
   .form
     .form__new-message
-      .form__input-box
-        %input.input-text{:placeholder : "type a message", :type : "text"}/
-        %label{class: "input-box__image"}
+      .form__new-message__input-box
+        %input.input-text{placeholder: "type a message", type: "text"}/
+        %label{class: "form__new-message__input-box__image"}
           = icon('fas', 'image')
           %input{type:"file", class: "input-box__image__file"}
-      %input.submit-btn{:name : "commit", :type : "submit", :value => "Send"}/
+      %input.submit-btn{name: "commit", type: "submit", value: "Send"}/

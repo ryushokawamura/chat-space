@@ -7,12 +7,26 @@
   width: calc(100vw - 300px);
   float: right;
   height: 100vh;
+  &__center{
+    height: calc(100vh - 190px );
+    width: 100%;
+  }
   &__header{
     height: 100px;
     display: flex;
     justify-content: space-between;
     padding: 0 20px;
- 
+    &__edit{
+      height: 40px;
+    width: 72px;
+    color: #38aef0;
+    border: solid 1px #38aef0;
+    margin-top: 28px;
+    margin-right: 20px;
+    line-height: 40px;
+    padding-left: 20px;
+    font-size: 16px;
+    }
     &__left{
       height: 60px;
       width: 100px;
@@ -22,49 +36,49 @@
         width: 100px;
         margin-top: 12px;
         display: flex;
-          &__name{
-            font-size: 12px;
-          &__massage{
-            font-size: 12px;
+        &__name{
+          font-size: 12px;
+        }
+        &__massage{
+          font-size: 12px;
         }
       }
     }
-  &__edit{
-    height: 40px;
-  width: 72px;
-  color: #38aef0;
-  border: solid 1px #38aef0;
-  margin-top: 28px;
-  margin-right: 20px;
-  line-height: 40px;
-  padding-left: 20px;
-  font-size: 16px;
   }
-  }
- }
+  
 }
 
-&__center{
-  height: calc(100vh - 190px );
-  width: 100%;
+.form{
+  &__new-message{
+    display: flex;
+    justify-content: space-between;
+      &__input-box{
+        position: relative;
+      
+       &__image{
+         position: absolute;
+         top: 10px;
+         right: 10px;
+      }
+    }  
+  }
+}
+
+
 
 .input-box__image__file{
   position: relative;
   display: none;
 }
 
-.input__text{
+.input-text{
   width: 1190px;
   height: 50px;
   padding-left: 10px;
   padding-right: 10px;
 }
 
-.input-box__image{
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
+
 
 .submit-btn{
   width: 100px;
@@ -94,17 +108,6 @@
   text-decoration: none;
 }
 
-  .form{
-    &__new-message{
-      display: flex;
-      justify-content: space-between;
-        &__input-box{
-          position: relative;
-    }
-   }
-  }
-}
-
 
 
 
@@ -116,36 +119,38 @@
   color: white;
   float: left;
   height: 100vh;
+}
+  .side__groups{
+    background-color: #2f3e51;
+    height: 750px;
+    // width: 100px;
+    padding-left: 20px;
+    padding-top: 20px;
+  } 
   .side__header{
-  background-color: #253141;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  padding: 0 40px;
+    background-color: #253141;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
     &__in{
     height: 20px;
     width: 100%;
     display: flex;
     justify-content: space-between;
-        &__name{
-          height: 20px;
-          width: 100%;
-        &__menu{
-          height: 20px;
-          display: flex;
-            &__right{
-             margin-left: 5px;
-          }
+      &__name{
+        height: 20px;
+        width: 100%;
+      }
+      &__menu{
+        height: 20px;
+        display: flex;
+          &__right{
+            margin-left: 5px;
         }
       }
-    }  
-  &__groups{
-      background-color: #2f3e51;
-      height: 65px;
-      padding-left: 20px;
     }
   }
-}
 
 
 .input-box__image__file{

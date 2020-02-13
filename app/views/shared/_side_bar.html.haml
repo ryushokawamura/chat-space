@@ -1,15 +1,16 @@
 .chat__side
   .side__header
-    .side__in
-      name
-      .side__in__name
+    = current_user.name
+  .side__header__in
+    name
+    .side__in__name
       .side__in__menu
         .side__in__menu__left
           = link_to "#", class: "contents__btn" do
             = icon('fas', 'edit')
         .side__in__menu__right
-          = link_to "#", class: "contents__btn" do
-            = icon('fas', 'cog')
+          = link_to edit_user_path(current_user), class: "contents__btn" do
+            = icon('fas', 'cog',class: 'icon')
   .side__groups
     = link_to "#", class: "contents__btn" do
       .side__groups__group
