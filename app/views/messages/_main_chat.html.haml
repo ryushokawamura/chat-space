@@ -6,16 +6,32 @@
       .main__header__left__member
         .main__header__left__member__name
           name1:
+      %li
+        - @group.users.each do |user|
+          =user.name
         .main__header__left__member__massage
-          massage1
+        
     .main__header__edit
-      -# = link_to "Edit", messages__index__path, class: "edit-link"
+      = link_to edit_group_path(current_user),class:"" do 
+        Edit
   .main__center
+    .messages
+      = render @messages
   .form
-    .form__new-message
-      .form__new-message__input-box
-        %input.input-text{placeholder: "type a message", type: "text"}/
-        %label{class: "form__new-message__input-box__image"}
-          = icon('fas', 'image')
-          %input{type:"file", class: "input-box__image__file"}
-      %input.submit-btn{name: "commit", type: "submit", value: "Send"}/
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'new_message__input-box', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'input-box__image__file'
+      = f.submit 'Send', class: 'form__submit'
+
+
+
+    -# .form__new-message
+    -#   .form__new-message__input-box
+    -#     %input.input-text{placeholder: "type a message", type: "text"}/
+    -#     %label{class: "form__new-message__input-box__image"}
+    -#       = icon('fas', 'image')
+    -#       %input{type:"file", class: "input-box__image__file"}
+    -#   %input.submit-btn{name: "commit", type: "submit", value: "Send"}/
