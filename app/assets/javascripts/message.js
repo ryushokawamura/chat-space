@@ -1,5 +1,4 @@
 $(function () {
-
   function buildHTML(message) {
 
     image = (message.image) ? `<img class= "lower-message__image" src=${message.image} >` : "";
@@ -10,7 +9,7 @@ $(function () {
               ${message.user_name}
             </div>
             <div class="upper-message__date">
-              ${message.date}
+              ${message.created_at}
             </div>
           </div>
           <div class="lower-meesage">
@@ -22,7 +21,7 @@ $(function () {
         </div>`
     return html;
   }
-$('.js-form').on('submit', function(e){
+$('#new_message').on('submit', function(e){
  e.preventDefault();
  var formData = new FormData(this);
  var url = $(this).attr('action')
@@ -36,26 +35,27 @@ $('.js-form').on('submit', function(e){
  })
   .done(function(data){
     var html = buildHTML(data);
+    console.log(html)
     $('.messages').append(html);
-    $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');   
+    $('.main__center').animate({ scrollTop: $('.messages')[0].scrollHeight});
     $('form')[0].reset();
+    $('input').prop('disabled', false);
   })
    .fail(function(){
      alert('error');
    });
-   return false;
+  //  return false;
  });
-});
 
-  var reloadMessages = function() {
-    if (window.location.href.match(/\/groups\/\d+\/messages/)){
-    last_message_id = $('.message:last').data("message-id");
-    $.ajax({
-      url: "api/messages",
-      type: 'get',
-      dataType: 'json',
-      data: {id: last_message_id}
-    })
+
+var reloadMessages = function() {
+  last_message_id = $('.message:last').data("message-id");
+  $.ajax({
+    url: "api/messages",
+    type: 'get',
+    dataType: 'json',
+    data: {id: last_message_id}
+  })
   .done(function(messages) {
     if (messages.length !== 0) {
       var insertHTML = '';
@@ -63,14 +63,17 @@ $('.js-form').on('submit', function(e){
         insertHTML += buildHTML(message)
     });
     $('.messages').append(insertHTML);
-    $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
-    }
+
+    $('.main__center').animate({ scrollTop: $('.messages')[0].scrollHeight});
+  }
   })
-    .fail(function() {
+  .fail(function() {
       alert('自動更新に失敗しました');
-    });
-  };
-  if (document.location.href.match(/\/groups\/\d+\/messages/)) {
+  });
+};
+
+if (document.location.href.match(/\/groups\/\d+\/messages/)) {
   setInterval(reloadMessages, 7000);
   }
-};
+
+});
