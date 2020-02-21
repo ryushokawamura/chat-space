@@ -14,6 +14,7 @@
     overflow: scroll;
     .messages{
       .message{
+        padding-bottom: 40px;
         .upper-message{
           display: flex;
             .upper-message__user-name{
@@ -61,29 +62,23 @@
       margin-top: 35px;
       &__member{
         height: 60px;
-        width: 100px;
+        width: 300px;
         margin-top: 12px;
         display: flex;
         &__name{
           font-size: 12px;
           display: flex;
           list-style: none;
-        }
-        &__massage{
-          font-size: 12px;
-        }
-        .list{
-        margin-left: 2px;
-        }
-  // &__center{
-  //   .messages{
-  //     .message{
-  //       .upper_massage{
-  //         display: flex;
-  //       }
-  //     }
-  //   }
-  // }
+
+          &__massage{
+            font-size: 12px;
+            }
+            .list{
+              margin-left: 2px;
+              display: flex;
+              }
+          }
+  
         } 
       }
     }
