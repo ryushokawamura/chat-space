@@ -65,9 +65,14 @@
         display: flex;
         &__name{
           font-size: 12px;
+          display: flex;
+          list-style: none;
         }
         &__massage{
           font-size: 12px;
+        }
+        .list{
+        margin-left: 2px;
         }
   // &__center{
   //   .messages{
@@ -246,7 +251,7 @@
 }
 
 
-
+_
 .lower-message{
   &__content{
   color: #434a54;
